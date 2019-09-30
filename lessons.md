@@ -29,3 +29,7 @@
 - Rather than using percentages, it is preferred to use the `fr`(fraction) unit. `fr` represent the amount of space left after all the elements with an explicit width/height are layed out.
 - By default the height of a grid is how hight the content is and the same applies for the height of a grid-item. But the default width of a grid is how wide the viewport is.
 - By using `auto` we're telling grid to fit the column to the size of the biggest content in that column.
+
+## Repeat function
+
+- `repeat(amount, pattern)` allows us to repeat a given pattern the specified amount of times. It can go anywhere in `grid-template-columns` or `grid-template-rows`, allowing us to mix and match them with other values.
