@@ -33,3 +33,10 @@
 ## Repeat function
 
 - `repeat(amount, pattern)` allows us to repeat a given pattern the specified amount of times. It can go anywhere in `grid-template-columns` or `grid-template-rows`, allowing us to mix and match them with other values.
+
+- ## Sizing grid items
+
+- If we want an item to span multiple columns we use `grid-column: span columns_number`.
+- If an items spans more columns than the grid can fit from the starting position of the item, it will wrap the item to the start of the next row. This will leave the space the item would've taken in blank.
+- We can also use `grid-row: span columns_number` to span multiple rows.
+- If the single item is bigger than the actual grid can fit it will create implicit columns/rows to fit the item.
