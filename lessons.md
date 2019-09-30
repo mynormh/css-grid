@@ -22,3 +22,10 @@
 - When we explicitly create columns but not rows, grid will generate implicit rows to fit the items in.And by default grid will wrap items into rows.
 - `grid-auto-flow` indicates weather items will be wrapped into rows or columns. By default `grid-auto-flow: row`.
 - And just like with rows we can define the implicit columns size with `grid-auto-columns`.
+
+## Sizing tracks
+
+- We can use percentages in `grid-template-columns` but it becomes a little complicated (especially when we want them to add up to 100%) when we have to take into account the gap size and we'd have to substract it from each column size.
+- Rather than using percentages, it is preferred to use the `fr`(fraction) unit. `fr` represent the amount of space left after all the elements with an explicit width/height are layed out.
+- By default the height of a grid is how hight the content is and the same applies for the height of a grid-item. But the default width of a grid is how wide the viewport is.
+- By using `auto` we're telling grid to fit the column to the size of the biggest content in that column.
