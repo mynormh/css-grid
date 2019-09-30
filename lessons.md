@@ -47,3 +47,8 @@
   - `grid-column-start`: specifies the item's start position by specifying a line track or span. By default `grid-column-start: auto`.
   - `grid-column-end`: specifies the item's end position by specifying a line track or span. By default `grid-column-end: auto`.
 - They both can also start counting from the last track to the first by specifing a negative number of track, where the last track is `-1`. This will onlly work for explicit tracks.
+
+## auto-fit and auto-fill
+
+- `auto-fill` tells grid to automatically fit as many possible columns in the grid, this will end the explicit grid at the end of the last possible column and change as the viewport size changes.
+- `auto-fit` the same as `auto-fill` but when there's free space available it will end the explicit grid at the end position of the last item.
