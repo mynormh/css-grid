@@ -52,3 +52,8 @@
 
 - `auto-fill` tells grid to automatically fit as many possible columns in the grid, this will end the explicit grid at the end of the last possible column and change as the viewport size changes.
 - `auto-fit` the same as `auto-fill` but when there's free space available it will end the explicit grid at the end position of the last item.
+
+## Responsive grids
+
+- When we manually set the size along with `auto-fill` or `auto-fit` we might run into cases where the content starts to spill out of the item. To fix this we use `minmax(min, max)` and if we use `1fr` as our max value it will grow as big as the available free space if needed. This replaces several uses form media-queries.
+- If we want a track to adjust to the content like `auto` but want to set a max-width/hight we can use `fit-content(100px)`.
