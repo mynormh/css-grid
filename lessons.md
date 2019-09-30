@@ -16,3 +16,9 @@
 - When we use `grid-template-columns` or `grid-template-rows` to create tracks they are called explicit, if not they are implicitly generated.
 - When grid can't fit an item in explicit tracks it will generate as many implicit rows needed to fit these items.
 - The items in explicit rows are sized by the values we defined but for the ones in implicit rows we can `grid-auto-rows: 100px` to set their size. We can even set the size of multiple implicit rows `grid-auto-rows: 100px 500px` and this will also repeat the pattern after every two implicit rows.
+
+## grid-auto-flow
+
+- When we explicitly create columns but not rows, grid will generate implicit rows to fit the items in.And by default grid will wrap items into rows.
+- `grid-auto-flow` indicates weather items will be wrapped into rows or columns. By default `grid-auto-flow: row`.
+- And just like with rows we can define the implicit columns size with `grid-auto-columns`.
