@@ -63,3 +63,7 @@
 - Another way to place and size the items in a grid is by giving specific names to areas of the grid with `grid-template-areas: ""` giving each area where the tracks intersect a name and then assigning a grid-item to an area with `grid-area`.
 - If we want an area to not be named we can use `"."`.
 - With this we can simply redefine our template areas in a media query to have a responsive design.
+
+## Area line names
+
+- When we create template areas we also create line names, which means we can simply use the line names and append `-start` or `-end` to define a start and end for the items, without needing to use line numbers.
