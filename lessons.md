@@ -78,3 +78,19 @@
 - By default when we have more items that can fit into the grid it will automatically wrap them to the next implicit row (`grid-auto-flow: row`), we can also set it so it creates implicit columns (`grid-auto-flow: column`) instead.
 - A third option is `grid-auto-flow: dense`, where if an item can't fit in the current row then it will still wrap it onto the next row but the blank space left by that item will be filled by items that can fit in that space.
 - This is not a perfect masonry since there will be times there are some blank spaces still left because it couldn't fit any items.
+
+## Aligning and Centering
+
+- Just like in flexbox, we can move items along the axises in grid but unlike flexbox the axises don't switch:
+  - `justify-*` is row axis.
+  - `align-*` is column axis.
+- In grid we have the following properties;
+  - `justify-items`: Controls how wide the elements themselves are. By default `justify-items: stretch`.
+  - `align-items`: Controls how high the elements themselves are, it won't work without explicit rows. By default `align-items: stretch`.
+  - `justify-content`: If the grid is not as wide as it could be (grid is by default the width of the viewport), it controls what to do with the extra space available in the row axis. By default `justify-content: start`
+  - `align-content`: Same as `justify-content` but in the column axis, it will only work in a container with a fixed height which is not too common. By default `align-content: start`.
+  - `justify-self`: Is defined in the grid-item itself and overrides the value of `justify-content`.
+  - `align-self`: Is defined in the grid-item itself and overrides the value of `align-content`.
+- The `place-items` property is a shorthand for `justify-items` and `align-items`.
+
+Useful to look up [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
