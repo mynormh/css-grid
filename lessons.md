@@ -57,3 +57,9 @@
 
 - When we manually set the size along with `auto-fill` or `auto-fit` we might run into cases where the content starts to spill out of the item. To fix this we use `minmax(min, max)` and if we use `1fr` as our max value it will grow as big as the available free space if needed. This replaces several uses form media-queries.
 - If we want a track to adjust to the content like `auto` but want to set a max-width/hight we can use `fit-content(100px)`.
+
+## Grid template areas
+
+- Another way to place and size the items in a grid is by giving specific names to areas of the grid with `grid-template-areas: ""` giving each area where the tracks intersect a name and then assigning a grid-item to an area with `grid-area`.
+- If we want an area to not be named we can use `"."`.
+- With this we can simply redefine our template areas in a media query to have a responsive design.
