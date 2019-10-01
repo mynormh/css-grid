@@ -98,3 +98,9 @@ Useful to look up [A Complete Guide to Grid](https://css-tricks.com/snippets/css
 ## Ordering items
 
 - We can specify the order of the items for the layout with `order: number`.
+
+## Album layout
+
+- By using a combination of `aut-fit` and `minmax()` we tell the grid to fit as many columns possible with a set min-width and when it has extra space to give each item `1fr`.
+- Similar to flexbox we can also nest grids by making a grid-item a grid-container too.
+- We use the `width: 100%` in the images so they adapt to the size of the grid column and don't spill out of it.
