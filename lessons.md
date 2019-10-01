@@ -67,3 +67,8 @@
 ## Area line names
 
 - When we create template areas we also create line names, which means we can simply use the line names and append `-start` or `-end` to define a start and end for the items, without needing to use line numbers.
+
+## Naming lines
+
+- To name a line we use `[]` when defining the tracks and we can use this names to size and position the items with `grid-column` and `grid-row`.
+- One line can have multiple names defined inside the `[]`.
