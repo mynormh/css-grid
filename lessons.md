@@ -104,3 +104,17 @@ Useful to look up [A Complete Guide to Grid](https://css-tricks.com/snippets/css
 - By using a combination of `aut-fit` and `minmax()` we tell the grid to fit as many columns possible with a set min-width and when it has extra space to give each item `1fr`.
 - Similar to flexbox we can also nest grids by making a grid-item a grid-container too.
 - We use the `width: 100%` in the images so they adapt to the size of the grid column and don't spill out of it.
+
+## Image Gallery
+
+- The grid will always be `100px`x`100px` and each image has a random size between 1-4 tracks (both columns and rows). We generate the random sizes with JS.
+- With JS we generate the actual HTML elements that will go in the grid and to the `<img>` element we assign a class of the random height and width generated. The image we select for each grid-item is also random and we also choose it with JS.
+- With `Array.from()` we can specify the length of the array and also pass it a callback function that will fill the array.
+- Since the columns have a fixed width of `100px` (instead of `fr`s) the images can spill out of the column, to fix this we apply `overflow: hidden` to the images.
+- `grid-auto-flow: dense` will fill the blank spaces left in the grid where it couldn't fit the next image.
+- We concat a ton of 1x1 images to make sure the little 1x1 grid tracks have enough images to be filled with.
+- To make the image fit exactly the grid we make the images `width: 100%` and `heght: 100%`, we also use `object-fit: cover` so the aspect-ratio of the image doesn't look distorted.
+- To avoid having to make the items `position: absolute` so we can display the overlay, we instead make the grid-item also a grid-container and let the images span the entire track.
+- If we place two or more items in the same row and column they will just overlap each other, so we use this to get the overlay effect along with `position: relative`. Note: Since the `<img>` element is before the `.item__overlay` element in our HTML, we don't need to specify a `z-index` when using `position: relative`.
+- We also make the `.item__overlay` a grid-container so we can center the button.
+- We handle the entire overlay image view with JS, by getting the image of the clicked item and setting it as the `src` of the image in the `.overlay` element.
