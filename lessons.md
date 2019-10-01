@@ -72,3 +72,9 @@
 
 - To name a line we use `[]` when defining the tracks and we can use this names to size and position the items with `grid-column` and `grid-row`.
 - One line can have multiple names defined inside the `[]`.
+
+## Dense
+
+- By default when we have more items that can fit into the grid it will automatically wrap them to the next implicit row (`grid-auto-flow: row`), we can also set it so it creates implicit columns (`grid-auto-flow: column`) instead.
+- A third option is `grid-auto-flow: dense`, where if an item can't fit in the current row then it will still wrap it onto the next row but the blank space left by that item will be filled by items that can fit in that space.
+- This is not a perfect masonry since there will be times there are some blank spaces still left because it couldn't fit any items.
