@@ -94,3 +94,7 @@
 - The `place-items` property is a shorthand for `justify-items` and `align-items`.
 
 Useful to look up [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+## Ordering items
+
+- We can specify the order of the items for the layout with `order: number`.
