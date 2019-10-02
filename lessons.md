@@ -178,3 +178,9 @@ Although doable with grid, we'd need a lot of columns just to span items across 
 
 - One good use case for Grid is when we have a webapp where the browser is divided into multiple windows ( some might have scrolling) and they all need to fit into however the viewport is.
 - This layout is mostly accomplished with nested grids.
+
+## Bootstrappy Grid
+
+- Most of them times it's better to adjust the layout to the content we have but there are some uses cases for bootstrap-like grid systems (12-columns, etc.).
+- If the content of one of the grid-items is bigger that'll make it so that the column that contains that item is no longer the same size as the others, because grid first places the items and assigns the space each need and then calculates the free space to give when using `fr`.
+- By using css-variables as our grid-properties values and then overriding them via `style` attribute of the HTML elements, we can create a very basic grid framework.
