@@ -118,3 +118,58 @@ Useful to look up [A Complete Guide to Grid](https://css-tricks.com/snippets/css
 - If we place two or more items in the same row and column they will just overlap each other, so we use this to get the overlay effect along with `position: relative`. Note: Since the `<img>` element is before the `.item__overlay` element in our HTML, we don't need to specify a `z-index` when using `position: relative`.
 - We also make the `.item__overlay` a grid-container so we can center the button.
 - We handle the entire overlay image view with JS, by getting the image of the clicked item and setting it as the `src` of the image in the `.overlay` element.
+
+## Flexbox vs Grid
+
+| Grid                                       | Flexbox                                                         |
+| ------------------------------------------ | --------------------------------------------------------------- |
+| ✔️In general can do everything flexbox can |                                                                 |
+| Only `grid-gap` can be animated            | ✔️`flex-grow` can be animated                                   |
+| ✔️More consistent across browsers          |                                                                 |
+| ✔️Easier to add more rows                  |                                                                 |
+| Has to use `order` for axis-reverse        | ✔️Easily reverse order of items `row-reverse`, `column-reverse` |
+| ✔️axis flipping                            |                                                                 |
+| ✔️controls on the right                    |                                                                 |
+|                                            | ✔️media controls                                                |
+| ✔️perfectly centered                       | ✔️perfectly centered                                            |
+| ✔️corners                                  |                                                                 |
+|                                            | ✔️stacked layout                                                |
+| ✔️unknown content size                     |                                                                 |
+| ✔️unknown number of items                  |                                                                 |
+|                                            | ✔️variable widths on each row                                   |
+
+### Axis flipping
+
+It's easier with grid to size the elements with `minmax()` and `1fr`, and also to control how the columns behave once they're flipped since we'd have to set a height for the flex-container to create multiple columns.
+
+### Controls on the right
+
+We need an extra wrapper around the controls to make it work with flexbox.
+
+### Media controls
+
+With flexbox we can just specify how the progress bar will grow and the size of the rest of the items depend only on their content, while with grid we need to rely on `auto` sized columns and need to modify `grid-template-columns` if we add or remove another control.
+
+### Perfectly centered
+
+It's easy with any of them to center items both vertically and horizontally.
+
+### Corners
+
+Although not a common layout, this is only accomplishable with grid.
+
+### Stacked layout
+
+Although doable with grid, we'd need a lot of columns just to span items across them and get the same result.
+
+### Unknown content size
+
+When we know the number of items but not the size of them it's relatively easy with both of them, the problem with flexbox is when we want space around the items since we have to use `margin` while with grid we can simply use `grid-gap`.
+
+### Unknown number of items
+
+It's easy to do it with any of them but again the problem with flexbox is that we don't have control over the gap and have to use `margin`.
+
+### Variable widths on each row
+
+Although doable with grid, we'd need a lot of columns just to span items across them and get the same result. Again the only issue with the flexbox solution is having to play with margins.

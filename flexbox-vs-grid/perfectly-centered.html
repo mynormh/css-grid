@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <title>Perfectly Centered</title>
+  </head>
+
+  <body>
+    <!-- Perfectly Centered Multiple Elements -->
+    <h2>Grid</h2>
+    <div class="grid hero">
+      <h3>Something Big Is Coming</h3>
+      <p>Get Ready...</p>
+    </div>
+    <h2>Flexbox</h2>
+    <div class="flexbox hero">
+      <h3>Something Big Is Coming</h3>
+      <p>Get Ready...</p>
+    </div>
+
+    <style>
+      .hero {
+        height: 200px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .grid.hero {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+      }
+
+      .flexbox.hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </body>
+</html>

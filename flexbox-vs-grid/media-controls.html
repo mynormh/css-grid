@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <title>Media controls</title>
+  </head>
+
+  <body>
+    <!-- The Longer Item in the middle -->
+    <h2>Grid</h2>
+    <div class="grid controls">
+      <button>⏯️</button>
+      <button>🐢</button>
+      <button>🐰</button>
+      <div class="scrubber"></div>
+      <button>💬</button>
+      <button>🔽</button>
+    </div>
+
+    <h2>Flexbox</h2>
+    <div class="flexbox controls">
+      <button>⏯️</button>
+      <button>🐢</button>
+      <button>🐰</button>
+      <div class="scrubber"></div>
+      <button>💬</button>
+      <button>🔽</button>
+    </div>
+
+    <style>
+      .grid.controls {
+        margin: 200px 0;
+        display: grid;
+        grid-template-columns: auto auto auto 1fr auto auto auto;
+        align-items: center;
+      }
+
+      .scrubber {
+        background: #bada55;
+        height: 10px;
+        min-width: 100px;
+        border-radius: 10px;
+      }
+
+      .flexbox.controls {
+        margin: 200px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .flexbox .scrubber {
+        flex: 1;
+      }
+    </style>
+  </body>
+</html>

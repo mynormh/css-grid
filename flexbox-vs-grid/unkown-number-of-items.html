@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <title>Unknown Number of Items</title>
+  </head>
+
+  <body>
+    <!-- Unknown Amount of Elements -->
+    <script>
+      function addItem() {
+        const unknowns = document.querySelectorAll(".unknown");
+        unknowns.forEach(unknown => {
+          unknown.innerHTML += `<div class="item">${unknown.childElementCount}</div>`;
+        });
+      }
+    </script>
+    <button onClick="addItem()">+ Add</button>
+    <h2>Grid</h2>
+    <div class="grid unknown">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h2>Flexbox</h2>
+    <div class="flexbox unknown">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <style>
+      .grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      }
+
+      .flexbox {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .flexbox .item {
+        flex: 1 50px;
+      }
+    </style>
+  </body>
+</html>

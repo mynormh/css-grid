@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <title>Axis Flipping</title>
+  </head>
+
+  <body>
+    <!-- Flipping the direction of columns -->
+
+    <script>
+      function flip(e) {
+        const flippers = document.querySelectorAll(".flipper");
+        flippers.forEach(flipper => {
+          flipper.classList.toggle("flip");
+        });
+      }
+    </script>
+
+    <button onClick="flip()">Flip It</button>
+    <h2>Grid</h2>
+    <div class="flipper grid">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+    </div>
+
+    <h2>Flexbox</h2>
+    <div class="flipper flexbox">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+    </div>
+
+    <style>
+      .flipper.grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      }
+
+      .flipper.grid.flip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .flipper.flexbox {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .flexbox .item {
+        flex: 0 auto;
+      }
+
+      .flipper.flexbox.flip {
+        flex-direction: column;
+      }
+    </style>
+  </body>
+</html>
