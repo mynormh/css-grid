@@ -173,3 +173,8 @@ It's easy to do it with any of them but again the problem with flexbox is that w
 ### Variable widths on each row
 
 Although doable with grid, we'd need a lot of columns just to span items across them and get the same result. Again the only issue with the flexbox solution is having to play with margins.
+
+## Codepen
+
+- One good use case for Grid is when we have a webapp where the browser is divided into multiple windows ( some might have scrolling) and they all need to fit into however the viewport is.
+- This layout is mostly accomplished with nested grids.

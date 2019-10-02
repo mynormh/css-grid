@@ -1,0 +1,146 @@
+:root {
+  --grey: #343436;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+    Sans-Serif;
+  font-weight: normal;
+  color: #272727;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;
+  color: #fff;
+}
+
+.pen {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  background: #000;
+  border-bottom: 5px solid var(--grey);
+  color: #fff;
+  padding: 10px;
+}
+
+.button {
+  position: relative;
+  background: var(--grey);
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.button--small {
+  font-size: 12px;
+  padding: 4px;
+}
+
+.button--dirty:before {
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  height: 2px;
+  width: calc(100% - 6px);
+  background: #ffc600;
+  content: "";
+}
+
+.pen__author {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: gray;
+}
+
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-left: 10px solid var(--grey);
+  border-bottom: 10px solid var(--grey);
+}
+
+.editor__header {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+
+.editor__input {
+  resize: none;
+  background: none;
+  border: 0;
+  color: grey;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.preview {
+  display: grid;
+}
+
+.preview iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.settings {
+  background: var(--grey);
+  border-top: 1px solid grey;
+  padding: 5px;
+}
+
+.button--black {
+  background: #000;
+  color: #fff;
+}
