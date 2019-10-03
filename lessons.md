@@ -195,3 +195,14 @@ Although doable with grid, we'd need a lot of columns just to span items across 
 - Thanks to `grid-template-areas` and `order` it's super easy to move things around for responsive design by redefining the areas and assigning different orders.
 - To control the menu button we make use of aria attributes to make it accessible (the checkbox hack is not accesible).
 - `transform: rotateX(90deg)` makes the element "disappear" by rotating it in the x-axis so we can't actually see it in a 2D plane. `max-height: 0` will make it so there's no space reserved for the element.
+
+## Blog
+
+- It's a 3 column grid where by default all the content will go in the middle column, and depending on the classes of certain elements some content will span the three columns and other will go on the left or right column.
+- Since working with percentages in `grid-template-columns` gets complicated once we add `grid-gap` another way to accomplish this is with `fr` units and once we start using `fr` units everything will add up regardless of how much `grid-gap` we add:
+  - Assign percentages to each column that sum up 100%: `grid-template-columns: 15% 60% 25%`.
+  - Pick one percentage and make it `fr` by picking something that sounds right: `15%` -> `3fr`.
+  - Since the `fr` units are proportional we can make the rest of the percentages based on a rule of three: `60%` -> 60 \* 3 / 15 -> `12fr`, `25%` -> 25 \* 3 / 15 -> `5fr`.
+- On the same `grid-gap` property we can specify the gap for the rows and columns `grid-gap: 10px 50px`.
+- To layout the `.tip-right` we can't do `grid-column: -1 / span 1` because this says "start at the last track and from there span one" and this will override the `grid-template-columns`, we have to use `grid-column: span 1 / -1` because this says "span one column and end at the last track".
+- Just like when columns are very wide it will make the rest of the content in that column as wide, any row that's very heigh will make the rest of the content in that row as high causing to have a lot of empty space. In this case we know we won't have one `.tip` after another, we make them `grid-row: span 5` and `align-self: start` so the short ones don't stretch.
