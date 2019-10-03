@@ -184,3 +184,14 @@ Although doable with grid, we'd need a lot of columns just to span items across 
 - Most of them times it's better to adjust the layout to the content we have but there are some uses cases for bootstrap-like grid systems (12-columns, etc.).
 - If the content of one of the grid-items is bigger that'll make it so that the column that contains that item is no longer the same size as the others, because grid first places the items and assigns the space each need and then calculates the free space to give when using `fr`.
 - By using css-variables as our grid-properties values and then overriding them via `style` attribute of the HTML elements, we can create a very basic grid framework.
+
+## Responsive website
+
+- By making the images `max-width: 100%` we prevent them from spilling out of the tracks.
+- We don't use grid for the text inside the `.hero` because both `<p>` would have to stick to the same column width and we want each `<p>` to be only as long as its content. So this is a perfect case for flexbox.
+- By using emojis as some of the icons we can make them bigger just by increasing the `font-size`.
+- By making the `.wrapper` a grid-container is easier to just add space between the major sections with `grid-gap`, instead of having to give each section a margin.
+- `:before` and `:after` are considered grid-items.
+- Thanks to `grid-template-areas` and `order` it's super easy to move things around for responsive design by redefining the areas and assigning different orders.
+- To control the menu button we make use of aria attributes to make it accessible (the checkbox hack is not accesible).
+- `transform: rotateX(90deg)` makes the element "disappear" by rotating it in the x-axis so we can't actually see it in a 2D plane. `max-height: 0` will make it so there's no space reserved for the element.
